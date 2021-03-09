@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from 'src/app/services/auth.services';
 import { TokenStorageService } from '../../services/token-storage.services';
@@ -14,10 +15,11 @@ export class LoginPage implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
+  calificationPage = "calificationPage";
 
-
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
-
+  constructor(private authService: AuthService,
+    private tokenStorage: TokenStorageService,
+    private router: Router) { }
 
   ngOnInit(): void {
     /* if (this.tokenStorage.getToken()) {
@@ -26,21 +28,20 @@ export class LoginPage implements OnInit {
   }
 
   onSubmit(): void {
-   // const { username } = this.username;
-    console.log(this.username)
+
     this.authService.login(this.username).subscribe(
       data => {
-        console.log("resultado")
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
+      
+        this.tokenStorage.saveToken(data.token);
+        this.tokenStorage.saveUser(data.user);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
 
-        this.reloadPage();
+        //  this.reloadPage();
+        this.router.navigate(['/calification'])
       },
       err => {
-        console.log("Hol<<<<<<<<<")
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
