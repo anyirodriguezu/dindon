@@ -1,0 +1,63 @@
+.bg-left {
+    z-index: 1;
+    min-height: 421px;
+    background: linear-gradient(to bottom, #f05142, #eb2c52);
+    position: absolute;
+    border-radius: 0 0 49pc 0;
+    top: -85px;
+    width: 100%;
+    -ms-transform: skew(0, 3deg);
+    transform: skewy(21deg);
+    margin: 0px;
+    transform-origin: top;
+    height: 85vh;
+}
+
+.login__container {
+    padding-top: 64px;
+    padding-bottom: 96px;
+    z-index: 2;
+    position: relative;
+}
+
+.login__title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.login__subtitle {
+    font-size: 12px;
+}
+.login__logo {
+    margin: auto;
+    display: block;
+    height: 200px;
+}
+
+.login__username {
+    top: 80px;
+    text-align: center;
+    position: relative;
+}
+
+.login__calification {
+    top: 130px;
+    text-align: center;
+    position: relative;
+}
+
+.login__username--label{
+    color: #eb2c52;
+}
+
+.login__username--input{
+    color: #eb2c52;
+}
+
+.login__calification--btn {
+    text-transform: none !important;
+}
+
+.login__affiliate--btn {
+    text-transform: none !important;
+}
